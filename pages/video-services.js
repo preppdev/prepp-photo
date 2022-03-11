@@ -1,5 +1,4 @@
 import { CheckIcon } from '@heroicons/react/outline'
-import CompareImagesSlider from '@/components/CompareImagesSlider'
 
 const features = [
   {
