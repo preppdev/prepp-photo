@@ -1,0 +1,284 @@
+/*
+Copyright 2021 Rebecca Grace Designs
+All rights Reserved
+Description: Before After Image Slider for Squarespace 7.1
+*/
+.rebeccagrace-horizontal .rebeccagrace-handle:before,
+.rebeccagrace-horizontal .rebeccagrace-handle:after,
+.rebeccagrace-vertical .rebeccagrace-handle:before,
+.rebeccagrace-vertical .rebeccagrace-handle:after {
+  content: ' ';
+  display: block;
+  background: white;
+  position: absolute;
+  z-index: 30;
+  -webkit-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+}
+
+.rebeccagrace-horizontal .rebeccagrace-handle:before,
+.rebeccagrace-horizontal .rebeccagrace-handle:after {
+  width: 3px;
+  height: 9999px;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+.rebeccagrace-vertical .rebeccagrace-handle:before,
+.rebeccagrace-vertical .rebeccagrace-handle:after {
+  width: 9999px;
+  height: 3px;
+  top: 50%;
+  margin-top: -1.5px;
+}
+
+.rebeccagrace-before-label,
+.rebeccagrace-after-label,
+.rebeccagrace-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rebeccagrace-before-label,
+.rebeccagrace-after-label,
+.rebeccagrace-overlay {
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.rebeccagrace-before-label,
+.rebeccagrace-after-label {
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  transition-property: opacity;
+}
+
+.rebeccagrace-before-label:before,
+.rebeccagrace-after-label:before {
+  color: white;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+}
+
+.rebeccagrace-before-label:before,
+.rebeccagrace-after-label:before {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  line-height: 38px;
+  padding: 0 20px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.rebeccagrace-horizontal .rebeccagrace-before-label:before,
+.rebeccagrace-horizontal .rebeccagrace-after-label:before {
+  top: 50%;
+  margin-top: -19px;
+}
+
+.rebeccagrace-vertical .rebeccagrace-before-label:before,
+.rebeccagrace-vertical .rebeccagrace-after-label:before {
+  left: 50%;
+  margin-left: -45px;
+  text-align: center;
+  width: 90px;
+}
+
+.rebeccagrace-left-arrow,
+.rebeccagrace-right-arrow,
+.rebeccagrace-up-arrow,
+.rebeccagrace-down-arrow {
+  width: 0;
+  height: 0;
+  border: 10px inset transparent;
+  position: absolute;
+}
+
+.rebeccagrace-left-arrow,
+.rebeccagrace-right-arrow {
+  top: 50%;
+  margin-top: -10px;
+}
+
+.rebeccagrace-up-arrow,
+.rebeccagrace-down-arrow {
+  left: 50%;
+  margin-left: -10px;
+}
+
+.rebeccagrace-container {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  z-index: 0;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.sqs-gallery-block-stacked .rebeccagrace-container img {
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  display: block;
+}
+
+.rebeccagrace-container.active .rebeccagrace-overlay,
+.rebeccagrace-container.active :hover.rebeccagrace-overlay {
+  background: rgba(0, 0, 0, 0);
+}
+
+.rebeccagrace-container.active .rebeccagrace-overlay .rebeccagrace-before-label,
+.rebeccagrace-container.active .rebeccagrace-overlay .rebeccagrace-after-label,
+.rebeccagrace-container.active :hover.rebeccagrace-overlay .rebeccagrace-before-label,
+.rebeccagrace-container.active :hover.rebeccagrace-overlay .rebeccagrace-after-label {
+  opacity: 0;
+}
+
+.rebeccagrace-container * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.rebeccagrace-before-label {
+  opacity: 0;
+}
+
+.rebeccagrace-before-label:before {
+  content: attr(data-content);
+}
+
+.rebeccagrace-after-label {
+  opacity: 0;
+}
+
+.rebeccagrace-after-label:before {
+  content: attr(data-content);
+}
+
+.rebeccagrace-horizontal .rebeccagrace-before-label:before {
+  left: 20px;
+}
+
+.rebeccagrace-horizontal .rebeccagrace-after-label:before {
+  right: 20px;
+}
+
+.rebeccagrace-vertical .rebeccagrace-before-label:before {
+  top: 20px;
+}
+
+.rebeccagrace-vertical .rebeccagrace-after-label:before {
+  bottom: 20px;
+}
+
+.rebeccagrace-overlay {
+  -webkit-transition-property: background;
+  -moz-transition-property: background;
+  transition-property: background;
+  background: rgba(0, 0, 0, 0);
+  z-index: 25;
+}
+
+.rebeccagrace-overlay:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.rebeccagrace-overlay:hover .rebeccagrace-after-label {
+  opacity: 1;
+}
+
+.rebeccagrace-overlay:hover .rebeccagrace-before-label {
+  opacity: 1;
+}
+
+.rebeccagrace-before {
+  z-index: 20;
+}
+
+.rebeccagrace-after {
+  z-index: 10;
+}
+
+.rebeccagrace-handle {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -28px;
+  margin-top: -28px;
+  border: 3px solid white;
+  -webkit-border-radius: 1000px;
+  -moz-border-radius: 1000px;
+  border-radius: 1000px;
+  -webkit-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.5);
+  z-index: 40;
+  cursor: pointer;
+}
+
+.rebeccagrace-horizontal .rebeccagrace-handle:before {
+  bottom: 50%;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: 0 3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+}
+
+.rebeccagrace-horizontal .rebeccagrace-handle:after {
+  top: 50%;
+  margin-top: 30px;
+  -webkit-box-shadow: 0 -3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 0 -3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: 0 -3px 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+}
+
+.rebeccagrace-vertical .rebeccagrace-handle:before {
+  left: 50%;
+  margin-left: 30px;
+  -webkit-box-shadow: 3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: 3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+}
+
+.rebeccagrace-vertical .rebeccagrace-handle:after {
+  right: 50%;
+  margin-right: 30px;
+  -webkit-box-shadow: -3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: -3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+  box-shadow: -3px 0 0 white, 0px 0px 12px rgba(51, 51, 51, 0.5);
+}
+
+.rebeccagrace-left-arrow {
+  border-right: 10px solid white;
+  left: 50%;
+  margin-left: -28px;
+  margin-top: -10px !important;
+}
+
+.rebeccagrace-right-arrow {
+  border-left: 10px solid white;
+  right: 50%;
+  margin-right: -28px;
+}
+
+.rebeccagrace-up-arrow {
+  border-bottom: 10px solid white;
+  top: 50%;
+  margin-top: -28px;
+}
+
+.rebeccagrace-down-arrow {
+  border-top: 10px solid white;
+  bottom: 50%;
+  margin-bottom: -28px;
+}
