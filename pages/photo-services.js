@@ -1,6 +1,10 @@
 import CompareImagesSlider from 'components/CompareImagesSlider'
 import { CheckIcon } from '@heroicons/react/outline'
 import ImageSlider from 'components/image-slider'
+import { PricingPlanComponent } from '@/components/PricingPlanComponent'
+//data tier for photo-editing
+import { photoEditing } from 'data/tier'
+const tier = photoEditing
 const files = [
   {
     id: 1,
@@ -141,7 +145,9 @@ const photoService = () => {
             </div>
           </div>
         </div>
-
+        <div className="mx-auto max-w-7xl pt-60 pb-3 lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-1/2">
+          <PricingPlanComponent {...tier} />
+        </div>
         <div className="mx-auto max-w-7xl py-5 px-4 sm:px-2 lg:py-24 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
